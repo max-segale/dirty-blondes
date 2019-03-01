@@ -25,7 +25,7 @@ function showListItem($obj, $showPhoto) {
           </p>-->
           <p>$obj->show_info</p>
 ";
-    if ($obj->event_link) {
+    if ($obj->event_link and 1 == 2) {
         $view .= "
           <a href='$obj->event_link' target='_blank'>
             <div class='btn fb'>Join the Facebook Event!</div>
