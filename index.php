@@ -6,7 +6,7 @@ include 'header.php';
         <div id="front_photos" class="front_photos">
           <div class="section">
             <div class="para">
-              <h1 class="heavy">The Dirty Blondes Rock Band</h1>
+              <h1 class="heavy"><?= $bandName ?></h1>
               <span>is a 5 piece group based in North Jersey, with a Classic Rock repertoire as eclectic as its members.</span>
             </div>
             <p>Our upbeat dance tunes, groovy blues and hard rock edge draws a fun loving fan base with a party attitude!</p>

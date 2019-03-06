@@ -25,7 +25,7 @@ foreach ($navItems as $item) {
 ?>
         </ul>
       </nav>
-      <p class="light">The Dirty Blondes &copy; <?= date("Y") ?></p>
+      <p class="light"><?= $bandName ?> &copy; <?= date("Y") ?></p>
       <br>
       <i class="light">Website built by 
         <a href="http://maxsegale.com" target="_blank">Max Segale</a>

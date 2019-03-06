@@ -213,8 +213,9 @@ header nav ul li.selected {
   padding: 5px 20px;
   border-radius: 0 10px 10px 0;
   color: #ffffff;
-  background-color: #007AFF;
-  font-size: 1em;
+  background-color: #5C9000;
+  font-size: 1.16em;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
   flex: 1 0 0;
   -webkit-appearance: none;
 }
@@ -255,12 +256,30 @@ header nav ul li.selected {
   border-radius: 10px;
   overflow: hidden;
 }
+.gigs > li .links u {
+  margin-right: 10px;
+}
+.gigs > li .btn {
+  color: #FFFFFF;
+  background-color: #666666;
+  padding: 10px;
+  border-radius: 10px;
+  text-align: center;
+}
+.gigs > li .btn.fb {
+  border: 2px solid #FFFFFF;
+  background-color: #3B5998;
+  position: absolute;
+  left: 5px;
+  top: 5px;
+}
 .gigs > li .preview {
   width: 100%;
   padding-bottom: 50%;
   background-size: cover;
   background-position: center;
   border-radius: 10px;
+  position: relative;
 }
 
 /* footer area */
