@@ -2,6 +2,33 @@
 
 require '../info/dirty-blondes.php';
 
+$bandName = 'The Dirty Blondes Band';
+
+$navItems = [['About', 'about'], ['Gigs', 'shows'], ['Media', 'media'], ['Booking', 'contact']];
+
+$infoRows = sqlQuery("SELECT * FROM info");
+
+$memberRows = sqlQuery("SELECT * FROM members");
+
+$showRows = sqlQuery("
+  SELECT * FROM shows LEFT JOIN venues ON shows.venue = venues.name
+  WHERE show_time > NOW()
+  ORDER BY show_time
+");
+
+$videoRows = sqlQuery("SELECT * FROM media WHERE type = 'VIDEO'");
+
+while ($obj = $infoRows->fetch_object()) {
+    switch ($obj->type) {
+        case "EMAIL":
+            $contactEmail = $obj;
+            break;
+        case "PHONE":
+            $contactPhone = $obj;
+            break;
+    }
+}
+
 function showListItem($obj, $showPhoto) {
     global $imagePath;
     $showDT = new DateTime($obj->show_time);
