@@ -1,10 +1,10 @@
 <?php
 
-require '../info/dirty-blondes.php';
+require_once('../info/dirty-blondes.php');
 
-$bandName = 'The Dirty Blondes Band';
+$thisURI = $_SERVER['REQUEST_URI'];
 
-$navItems = [['About', 'about'], ['Gigs', 'shows'], ['Media', 'media'], ['Booking', 'contact']];
+$thisPage = substr($thisURI, strrpos($thisURI, '/') + 1);
 
 $infoRows = sqlQuery("SELECT * FROM info");
 
@@ -28,6 +28,24 @@ while ($obj = $infoRows->fetch_object()) {
             break;
     }
 }
+
+function navListItems($isHeader) {
+    global $thisPage;
+    $navItems = [['About', 'about'], ['Gigs', 'shows'], ['Media', 'media'], ['Booking', 'contact']];
+    foreach ($navItems as $item) {
+        $itemClass = "";
+        if ($item[1] == $thisPage) {
+            $itemClass = " class='selected'";
+        }
+        $view = "
+  <li$itemClass>
+    <a href='$item[1]'>$item[0]</a>
+  </li>
+";
+        echo $view;
+    }
+}
+
 
 function showListItem($obj, $showPhoto) {
     global $imagePath;

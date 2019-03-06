@@ -1,6 +1,6 @@
 <?php
 
-require 'components.php';
+require_once('components.php');
 
 ?>
 <!DOCTYPE html>
@@ -25,25 +25,7 @@ require 'components.php';
       </div>
       <nav>
         <ul>
-<?php
-
-$thisPage = substr($_SERVER['REQUEST_URI'], strrpos($_SERVER['REQUEST_URI'], '/') + 1);
-
-foreach ($navItems as $item) {
-  $itemClass = '';
-  if ($item[1] == $thisPage) {
-    $itemClass = ' class="selected"';
-  }
-
-?>
-          <li<?= $itemClass ?>>
-            <a href="<?= $item[1] ?>"><?= $item[0] ?></a>
-          </li>
-<?php
-
-}
-
-?>
+          <?= navListItems(true) ?>
         </ul>
       </nav>
     </header>
