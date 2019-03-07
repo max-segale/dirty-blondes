@@ -443,4 +443,7 @@ footer nav li.selected {
   .bio_pic {
     padding-bottom: 50%;
   }
+  .front_photos {
+    height: 400px;
+  }
 }
