@@ -1,28 +1,14 @@
     </div>
     <footer>
-      <div>
+      <div class="link">
         <a href="<?= $contactPhone->link ?>"><?= $contactPhone->link ?></a>
       </div>
-      <div>
+      <div class="link">
         <a href="<?= $contactEmail->link ?>"><?= $contactEmail->link ?></a>
       </div>
       <nav>
         <ul>
-<?php
-
-$navItems = [['Home', 'index'], ['About', 'about'], ['Gigs', 'shows'], ['Media', 'media'], ['Booking', 'contact']];
-
-foreach ($navItems as $item) {
-    $selected = false;
-    $navView = "<li";
-    if ($item[1] == $thisPage) {
-      $navView .= " class='selected'";
-    }
-    $navView .= "><a href='$item[1]'>$item[0]</a></li>";
-    echo $navView;
-}
-
-?>
+          <?= navListItems(false) ?>
         </ul>
       </nav>
       <p class="light"><?= $bandName ?> &copy; <?= date("Y") ?></p>

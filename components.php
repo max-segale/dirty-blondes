@@ -16,7 +16,9 @@ $showRows = sqlQuery("
   ORDER BY show_time
 ");
 
+$photoRows = sqlQuery("SELECT * FROM media WHERE type = 'PHOTO'");
 $videoRows = sqlQuery("SELECT * FROM media WHERE type = 'VIDEO'");
+$musicVideoRows = sqlQuery("SELECT * FROM media WHERE type = 'MUSICVIDEO'");
 
 while ($obj = $infoRows->fetch_object()) {
     switch ($obj->type) {
@@ -26,15 +28,31 @@ while ($obj = $infoRows->fetch_object()) {
         case "PHONE":
             $contactPhone = $obj;
             break;
+        case "FACEBOOK":
+            $fbPage = $obj;
+            break;
     }
 }
 
 function navListItems($isHeader) {
     global $thisPage;
-    $navItems = [['About', 'about'], ['Gigs', 'shows'], ['Media', 'media'], ['Booking', 'contact']];
+    if ($thisPage === '') {
+        $thisPage = 'index';
+    }
+    if (strpos($thisPage, '.') < 1) {
+        $thisPage .= '.php';
+    }
+    $navItems = [
+      ['Home','index.php'],
+      ['About','about.php'],
+      ['Gigs','shows.php'],
+      ['Photos','media.php?type=photo'],
+      ['Videos','media.php?type=video'],
+      ['Booking','contact.php']
+    ];
     foreach ($navItems as $item) {
         $itemClass = "";
-        if ($item[1] == $thisPage) {
+        if ($item[1] === $thisPage) {
             $itemClass = " class='selected'";
         }
         $view = "
@@ -46,6 +64,33 @@ function navListItems($isHeader) {
     }
 }
 
+function mediaListItems($type) {
+    global $imagePath;
+    $mediaRows = sqlQuery("SELECT * FROM media WHERE type = '$type'");
+    while ($media = $mediaRows->fetch_object()) {
+        $view = "
+  <li>
+    <p class='caption light'>$media->caption</p>
+";
+        if ($type === 'VIDEO' || $type === 'MUSICVIDEO') {
+            $view .= "
+    <div class='video_box'>
+      <iframe src='$media->link' scrolling='no'></iframe>
+    </div>
+";
+        } else if ($type === 'PHOTO') {
+            $view .= "
+    <div class='photo_box'>
+      <div class='photo' style='background-image: url($imagePath$media->link)'></div>
+    </div>
+";
+        }
+        $view .= "
+  </li>
+";
+        echo $view;
+    }
+}
 
 function showListItem($obj, $showPhoto) {
     global $imagePath;

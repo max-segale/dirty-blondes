@@ -38,9 +38,6 @@ a {
   text-decoration: none;
   color: inherit;
 }
-a:hover {
-  text-decoration: underline;
-}
 p {
   margin: 0.5em 5px;
 }
@@ -104,48 +101,73 @@ header {
   width: 100%;
   color: <?= $backColor ?>;
   background-color: <?= $textColor ?>;
-  padding: 10px 0 0;
-  text-align: center;
+  box-shadow: 0 2px 5px 0 rgba(0,0,0,0.8);
+  padding: 8px 5px 4px;
   white-space: nowrap;
   display: flex;
   flex-flow: row wrap;
-  justify-content: center;
-  align-items: baseline;
+  justify-content: space-between;
+  align-items: center;
   position: fixed;
   left: 0;
   top: 0;
   z-index: 1;
 }
 header .logo {
-  flex: 100%;
+  flex: 0 1 288px;
 }
-header .mudflap_girl {
-  height: 25px;
+header .logo_img {
+  margin: 0 auto;
+  width: 100%;
+  height: 32px;
+  background-image: url("<?= $imagePath ?>dirty-blondes-nj-rock-band-banner.png");
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-size: contain;
 }
-header .logo_text {
-  font-size: 1.64em;
-  margin: 0 5px;
-  white-space: nowrap;
+header .btn {
+  width: 30px;
+  height: 30px;
+  background-color: <?= $backColor ?>;
+  background-image: url("<?= $imagePath ?>icon-menu-24px.svg");
+  background-size: 24px;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 5px;
 }
 header nav {
   flex: 100%;
-  padding: 0 10px;
+  height: 0;
+  overflow: hidden;
+}
+header nav.open {
+  overflow: visible;
 }
 header nav ul {
+  float: right;
   display: flex;
-  flex-flow: row nowrap;
+  flex-flow: column nowrap;
   justify-content: space-between;
   align-items: baseline;
-  margin: 0 auto;
+  margin: 5px -10px 0 0;
+  border-radius: 0 0 10px 10px;
+  padding: 5px 10px 10px;
+  background-color: <?= $textColor ?>;
+  box-shadow: 0 2px 5px 0 rgba(0,0,0,0.8);
 }
 header nav ul li {
+  width: 100%;
   font-size: 1.16em;
+  margin: 5px 0 0 0;
   padding: 2px 10px;
-  border-radius: 5px 5px 0 0;
+  border-radius: 5px;
+  background-color: <?= $textColor ?>;
 }
 header nav ul li:hover {
+  background-color: #DDDDDD;
 }
 header nav ul li:active {
+
 }
 header nav ul li.selected {
   background-color: <?= $backColor ?>;
@@ -155,7 +177,7 @@ header nav ul li.selected {
 /* front page */
 .container {
   margin: 0 auto;
-  padding-top: 70px
+  padding-top: 44px
 }
 .front_photos {
   position: relative;
@@ -235,7 +257,7 @@ header nav ul li.selected {
 /* media items */
 .video_box {
   position: relative;
-  margin: 5px 0 20px 0;
+  margin: 5px 0 20px;
   padding-bottom: 56.0563%;
 }
 .video_box iframe {
@@ -245,6 +267,22 @@ header nav ul li.selected {
   width: 100%;
   height: 100%;
   background-color: <?= $backColor ?>;
+}
+.photo_box {
+  position: relative;
+  padding-bottom: 56.0563%;
+  margin: 5px 0 20px;
+}
+.photo_box .photo {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: <?= $boxColor ?>;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 /* shows list */
@@ -302,8 +340,31 @@ footer nav li.selected {
 
 /* mid size styles */
 @media (min-width: 568px) {
-  header nav {
+  /*header nav {
     flex: 0 0 568px;
+  }*/
+  .container {
+    padding-top: 76px;
+  }
+  header .logo {
+    flex: 100%;
+  }
+  header .btn {
+    display: none;
+  }
+  header nav {
+    height: initial;
+  }
+  header nav ul {
+    float: none;
+    box-shadow: none;
+    flex-flow: row nowrap;
+    margin: 0;
+    border-radius: 0;
+    padding: 0;
+  }
+  header nav ul li {
+    flex: 0;
   }
   .sect_grid {
     display: flex;
@@ -355,6 +416,10 @@ footer nav li.selected {
 
 /* large size styles */
 @media (min-width: 720px) {
+  header nav ul {
+    width: 720px;
+    margin: 0 auto;
+  }
   .band_shot.in_text {
     float: right;
     width: 50%;

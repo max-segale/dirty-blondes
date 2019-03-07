@@ -2,28 +2,38 @@
 
 include 'header.php';
 
+$type = $_REQUEST['type'];
+
+if ($type === 'video') {
+
 ?>
+  <h1 class="title heavy">Media</h1>
   <div class="section">
-    <h1 class="title heavy">Live Performances</h1>
+    <h2 class="heading heavy">Live Performances</h1>
     <ul class="media_grid">
-<?php
-
-while ($video = $videoRows->fetch_object()) {
-    $videoView = "
-      <li>
-        <p class='caption light'>$video->caption</p>
-        <div class='video_box'>
-          <iframe src='$video->link' scrolling='no'></iframe>
-        </div>
-      </li>
-    ";
-    echo $videoView;
-}
-
-?>
+      <?= mediaListItems('VIDEO'); ?>
     </ul>
   </div>
-<?php
+  <div class="section">
+    <h2 class="heading heavy">Music Videos</h1>
+    <ul class="media_grid">
+      <?= mediaListItems('MUSICVIDEO'); ?>
+    </ul>
+  </div>
+<?
+
+} else {
+
+?>
+  <div class="section">
+    <h2 class="heading heavy">Photo Gallery</h2>
+    <ul class="media_grid">
+      <?= mediaListItems('PHOTO'); ?>
+    </ul>
+  </div>
+<?
+
+}
 
 include 'footer.php';
 

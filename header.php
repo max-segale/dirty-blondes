@@ -15,15 +15,15 @@ require_once('components.php');
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>The Dirty Blondes 🎸 NJ Rock Band</title>
     <link rel="stylesheet" type="text/css" href="style.php">
+    <script type="text/javascript" src="dirty-blondes.js"></script>
   </head>
   <body>
     <header>
       <div class="logo">
-        <img class="mudflap_girl" src="<?= $imagePath ?>dirty-blondes-girl-l.png">
-        <span class="logo_text heavy"><a href="index">The Dirty Blondes</a></span>
-        <img class="mudflap_girl" src="<?= $imagePath ?>dirty-blondes-girl-r.png">
+        <div class="logo_img"></div>
       </div>
-      <nav>
+      <div id="menu_btn" class="btn menu"></div>
+      <nav id="menu_nav">
         <ul>
           <?= navListItems(true) ?>
         </ul>
