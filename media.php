@@ -7,7 +7,6 @@ $type = $_REQUEST['type'];
 if ($type === 'video') {
 
 ?>
-  <h1 class="title heavy">Media</h1>
   <div class="section">
     <h2 class="heading heavy">Live Performances</h1>
     <ul class="media_grid">

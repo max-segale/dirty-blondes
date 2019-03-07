@@ -270,7 +270,7 @@ header nav ul li.selected {
 }
 .photo_box {
   position: relative;
-  padding-bottom: 56.0563%;
+  padding-bottom: 75%;
   margin: 5px 0 20px;
 }
 .photo_box .photo {
@@ -407,6 +407,7 @@ footer nav li.selected {
   }
   .media_grid > li {
     flex: 50%;
+    padding: 0 5px;
   }
   footer nav {
     width: 568px;
