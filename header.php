@@ -14,6 +14,7 @@ require_once('components.php');
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>The Dirty Blondes 🎸 NJ Rock Band</title>
+    <link rel="icon" href="favicon.ico">
     <link rel="stylesheet" type="text/css" href="style.php">
     <script type="text/javascript" src="dirty-blondes.js"></script>
   </head>
