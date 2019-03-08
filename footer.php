@@ -11,11 +11,13 @@
           <?= navListItems(false) ?>
         </ul>
       </nav>
-      <p class="light"><?= $bandName ?> &copy; <?= date("Y") ?></p>
-      <br>
-      <i class="light">Website built by 
-        <a href="http://maxsegale.com" target="_blank">Max Segale</a>
-      </i>
+      <div class="small">
+        <p class="light"><?= $bandName ?> &copy; <?= date("Y") ?></p>
+        <br>
+        <i class="light">Website built by 
+          <a href="http://maxsegale.com" target="_blank">Max Segale</a>
+        </i>
+      </div>
     </footer>
   </body>
 </html>

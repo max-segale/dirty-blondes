@@ -70,12 +70,11 @@ function mediaListItems($type) {
     while ($media = $mediaRows->fetch_object()) {
         $view = "
   <li>
-    <p class='caption light'>$media->caption</p>
 ";
         if ($type === 'VIDEO' || $type === 'MUSICVIDEO') {
             $view .= "
     <div class='video_box'>
-      <iframe src='$media->link' scrolling='no'></iframe>
+      <iframe src='$media->link' scrolling='no' allowfullscreen ></iframe>
     </div>
 ";
         } else if ($type === 'PHOTO') {
@@ -86,6 +85,7 @@ function mediaListItems($type) {
 ";
         }
         $view .= "
+    <div class='caption'>$media->caption</div>
   </li>
 ";
         echo $view;
@@ -103,7 +103,7 @@ function showListItem($obj, $showPhoto) {
   <li>
     <div class='info'>
       <div class='heading'>
-        <span class='heavy'>$showDate</span> at $showTime
+        <span class='heavy'>$showDate</span> - $showTime
       </div>
       <p>
         <a href='$obj->link' target='_blank'>

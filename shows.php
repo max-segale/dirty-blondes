@@ -3,8 +3,8 @@
 include 'header.php';
 
 echo "
+  <h1 class='title'>Upcoming Shows</h1>
   <div class='section'>
-    <h1 class='title heavy'>Upcoming Shows</h1>
     <ul class='gigs full'>
 ";
 

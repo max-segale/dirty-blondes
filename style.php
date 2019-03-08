@@ -52,8 +52,9 @@ video {
 /* common classes */
 .title {
   display: block;
-  margin: 10px 5px 5px;
-  font-size: 1.32em;
+  padding: 20px 10px 0;
+  font-size: 1.48em;
+  font-weight: 700;
 }
 .heading {
   display: block;
@@ -62,10 +63,6 @@ video {
 }
 .sub_heading {
   font-size: 1.16em;
-}
-.caption {
-  font-size: 0.8em;
-  margin: 0 5px;
 }
 .light {
   font-weight: 300;
@@ -114,7 +111,7 @@ header {
   z-index: 1;
 }
 header .logo {
-  flex: 0 1 288px;
+  flex: 1 0 272px;
 }
 header .logo_img {
   margin: 0 auto;
@@ -126,6 +123,7 @@ header .logo_img {
   background-size: contain;
 }
 header .btn {
+  flex: 0 0 30px;
   width: 30px;
   height: 30px;
   background-color: <?= $backColor ?>;
@@ -136,7 +134,7 @@ header .btn {
   border-radius: 5px;
 }
 header nav {
-  flex: 100%;
+  flex: 0 0 100%;
   height: 0;
   overflow: hidden;
 }
@@ -149,7 +147,7 @@ header nav ul {
   flex-flow: column nowrap;
   justify-content: space-between;
   align-items: baseline;
-  margin: 5px -10px 0 0;
+  margin: 5px 0 0 0;
   border-radius: 0 0 10px 10px;
   padding: 5px 10px 10px;
   background-color: <?= $textColor ?>;
@@ -255,10 +253,15 @@ header nav ul li.selected {
 }
 
 /* media items */
+.media_grid .caption {
+  padding: 5px 10px 20px;
+  font-style: italic;
+  font-weight: 300;
+  text-align: center;
+}
 .video_box {
   position: relative;
-  margin: 5px 0 20px;
-  padding-bottom: 56.0563%;
+  padding-bottom: 56%;
 }
 .video_box iframe {
   position: absolute;
@@ -266,12 +269,12 @@ header nav ul li.selected {
   top: 0;
   width: 100%;
   height: 100%;
-  background-color: <?= $backColor ?>;
+  border: 2px solid <?= $boxColor ?>;
+  background-color: <?= $boxColor ?>;
 }
 .photo_box {
   position: relative;
   padding-bottom: 75%;
-  margin: 5px 0 20px;
 }
 .photo_box .photo {
   position: absolute;
@@ -283,6 +286,7 @@ header nav ul li.selected {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  border-radius: 10px;
 }
 
 /* shows list */
@@ -323,7 +327,6 @@ header nav ul li.selected {
 /* footer area */
 footer {
   text-align: center;
-  font-size: 0.8em;
   margin-top: 20px;
   padding: 20px 10px 40px 10px
 }
@@ -336,6 +339,12 @@ footer nav ul {
 }
 footer nav li.selected {
   text-decoration: underline;
+}
+footer .link {
+  margin: 5px 0;
+}
+footer .small {
+  font-size: 0.8em;
 }
 
 /* mid size styles */
@@ -434,9 +443,16 @@ footer nav li.selected {
 
 /* full size styles */
 @media (min-width: 1024px) {
+  header .logo_img {
+    height: 40px;
+  }
   .container {
+    padding-top: 84px;
     width: 1024px;
     margin: 0 auto;
+  }
+  .title {
+    padding: 20px 15px 0;
   }
   .section {
     padding: 10px;

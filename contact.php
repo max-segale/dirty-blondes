@@ -5,9 +5,9 @@ include 'header.php';
 $imgURL = $imagePath . 'dirty-blondes-anywhere.jpg';
 
 echo "
+  <h1 class='title'>Contact Us</h1>
   <div class='sect_grid'>
     <div class='section'>
-      <h1 class='title heavy'>Contact Us</h1>
       $bookingText
     </div>
     <div class='section'>

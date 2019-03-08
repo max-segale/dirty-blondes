@@ -3,8 +3,8 @@
 include 'header.php';
 
 ?>
+  <h1 class="title">Meet the Band</h1>
   <div class="section">
-    <h1 class="title heavy">Meet the Band</h1>
     <div class="band_shot in_text" style="background-image: url(<?= $imagePath ?>dirty-blondes-band-porch-1.jpg)"></div>
     <p><?= $bandName ?> originated in 2006, when Christy and Al met playing in a Blues band decided to create a more commercially viable project. The band solidified with the rhythm section when Pete was recruited on bass and Jamie took over on drums.</p>
     <p>Lisa Deane, Christy's Black River Girls partner and good friend, came on as lead vocalist and the band gelled and has been gigging steadily ever since!</p>

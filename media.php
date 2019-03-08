@@ -4,6 +4,8 @@ include 'header.php';
 
 $type = $_REQUEST['type'];
 
+echo "<h1 class='title'>Media</h1>";
+
 if ($type === 'video') {
 
 ?>
