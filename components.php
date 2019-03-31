@@ -128,7 +128,7 @@ function showListItem($obj, $showPhoto) {
         $view .= "
     </div>
     <div class='preview' style='background-image: url($imgURL)'>
-"; 
+";
         if ($obj->event_link) {
             $view .= "
       <a href='$obj->event_link' target='_blank'>
@@ -170,14 +170,14 @@ $contactInfoBox = "
     <ul class='contact_links sub_heading heavy'>
       <li>
         <div>
-          <a href='tel:$contactPhone->link'>📱 
+          <a href='tel:$contactPhone->link'>📱
             <span>Call $contactPhone->name at $contactPhone->link</span>
           </a>
         </div>
       </li>
       <li>
         <div>
-          <a href='mailto:$contactEmail->link'>📨 
+          <a href='mailto:$contactEmail->link'>📨
             <span>$contactEmail->link</span>
           </a>
         </div>
@@ -193,7 +193,7 @@ $mailingListBox = "
     </div>
     <form name='mailing_list' action='mailing-list.php' method='POST' enctype='multipart/form-data'>
       <div class='mailing_list'>
-        <input class='text_field' type='text' name='member_email' placeholder='Enter your email address' maxlength='100' required>
+        <input class='text_field' type='email' name='member_email' placeholder='Enter your email address' maxlength='100' required>
         <input class='btn' type='submit' value='Sign Up'>
       </div>
     </form>
