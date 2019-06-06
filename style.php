@@ -22,7 +22,7 @@ $boxColor = "#666666";
 /* tag styles */
 html, body {
   text-align: left;
-  font-size: 16px;
+  font-size: 18px;
   font-family: <?= $fontFam ?>;
   color: <?= $textColor ?>;
   background-color: <?= $backColor ?>;

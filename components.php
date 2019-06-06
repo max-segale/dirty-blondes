@@ -94,12 +94,17 @@ function mediaListItems($type) {
 
 function showListItem($obj, $showPhoto) {
     global $imagePath;
+    $nextShow = true;
+    if (!$obj) {
+        $nextShow = false;
+    }
     $showDT = new DateTime($obj->show_time);
     $showDate = $showDT->format('D, F jS Y');
     $showTime = $showDT->format('g:i a');
     $calLink = "cal-event.php?id=$obj->id";
     $mapLink = "https://www.google.com/maps/search/?api=1&query=$obj->location";
-    $view = "
+    if ($nextShow) {
+        $view = "
   <li>
     <div class='info'>
       <div class='heading'>
@@ -112,35 +117,47 @@ function showListItem($obj, $showPhoto) {
         <br>$obj->location
       </p>
 ";
-    if ($obj->show_info) {
-        $view .= "
+        if ($obj->show_info) {
+            $view .= "
       <p>$obj->show_info</p>
 ";
-    }
-    $view .= "
+        }
+        $view .= "
       <p class='links'>
         <a href='$calLink' download='dbb-event.ics'>🗓 <u>Add to calendar</u></a>
         <a href='$mapLink' target='_blank'>🚗 <u>Get directions</u></a>
       </p>
 ";
-    if ($showPhoto) {
-        $imgURL =  $imagePath . $obj->photo;
-        $view .= "
+        if ($showPhoto) {
+            $imgURL =  $imagePath . $obj->photo;
+            $view .= "
     </div>
     <div class='preview' style='background-image: url($imgURL)'>
 ";
-        if ($obj->event_link) {
-            $view .= "
+            if ($obj->event_link) {
+                $view .= "
       <a href='$obj->event_link' target='_blank'>
         <div class='btn fb'>Join the Facebook Event</div>
       </a>
 ";
+            }
         }
-    }
-    $view .= "
+        $view .= "
     </div>
   </li>
 ";
+    } else {
+        $view = "
+  <li>
+    <div class='info'>
+      <div class='heading'>
+        <span class='heavy'>No shows at this time.</span>
+      </div>
+      <p>Please check back soon or book us for our next gig!</p>
+    </div>
+  </li>
+";
+    }
     return $view;
 }
 

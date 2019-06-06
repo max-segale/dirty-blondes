@@ -22,7 +22,7 @@ $DTFormat = 'Y-m-d H:i:s';
 $icalobj = new ZCiCal();
 // create node values
 $evtDTStamp = ZCiCal::fromSqlDateTime();
-$evtSummary = ZCiCal::formatContent("$bandName at $showObj->venue");
+$evtSummary = ZCiCal::formatContent("$bandName 🎸");
 $evtStart = ZCiCal::fromSqlDateTime($startDateTime->format($DTFormat));
 $evtEnd = ZCiCal::fromSqlDateTime($endDateTime->format($DTFormat));
 $evtLocation = ZCiCal::formatContent("$showObj->venue\n$showObj->location");
