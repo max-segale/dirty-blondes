@@ -1,10 +1,10 @@
     </div>
     <footer>
       <div class="link">
-        <a href="<?= $contactPhone->link ?>"><?= $contactPhone->link ?></a>
+        <a href="tel:<?= $contactPhone->link ?>"><?= $contactPhone->link ?></a>
       </div>
       <div class="link">
-        <a href="<?= $contactEmail->link ?>"><?= $contactEmail->link ?></a>
+        <a href="mailto:<?= $contactEmail->link ?>"><?= $contactEmail->link ?></a>
       </div>
       <nav>
         <ul>
@@ -14,7 +14,7 @@
       <div class="small">
         <p class="light"><?= $bandName ?> &copy; <?= date("Y") ?></p>
         <br>
-        <i class="light">Website built by 
+        <i class="light">Website built by
           <a href="http://maxsegale.com" target="_blank">Max Segale</a>
         </i>
       </div>
