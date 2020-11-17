@@ -7,9 +7,12 @@ echo "
   <div class='section'>
     <ul class='gigs full'>
 ";
-
-while ($obj = $showRows->fetch_object()) {
-    echo showListItem($obj, true);
+if ($showRows->fetch_object()) {
+    while ($obj = $showRows->fetch_object()) {
+        echo showListItem($obj, true);
+    }
+} else {
+    echo showListItem(false, false);
 }
 
 echo "
@@ -20,10 +23,10 @@ echo "
 $imgURL = $imagePath . 'dirty-blondes-dancing-crowd.jpg';
 
 echo "
+  <div class='band_shot' style='background-image: url($imgURL)'></div>
   <div class='section small'>
     $mailingListBox
   </div>
-  <div class='band_shot' style='background-image: url($imgURL)'></div>
 ";
 
 include 'footer.php';

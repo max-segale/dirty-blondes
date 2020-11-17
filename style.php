@@ -122,10 +122,14 @@ header .logo_img {
   background-repeat: no-repeat;
   background-size: contain;
 }
-header .btn {
+header .menu_btn_label {
   flex: 0 0 30px;
   width: 30px;
   height: 30px;
+}
+header .menu_btn_box {
+  width: 100%;
+  height: 100%;
   background-color: <?= $backColor ?>;
   background-image: url("<?= $imagePath ?>icon-menu-24px.svg");
   background-size: 24px;
@@ -133,13 +137,16 @@ header .btn {
   background-position: center;
   border-radius: 5px;
 }
+header #menu_btn_check {
+  display: none;
+}
+header #menu_btn_check:checked + nav {
+  overflow: visible;
+}
 header nav {
   flex: 0 0 100%;
   height: 0;
   overflow: hidden;
-}
-header nav.open {
-  overflow: visible;
 }
 header nav ul {
   float: right;
@@ -273,20 +280,12 @@ header nav ul li.selected {
   background-color: <?= $boxColor ?>;
 }
 .photo_box {
-  position: relative;
-  padding-bottom: 75%;
+  border-radius: 10px;
+  overflow: hidden;
 }
 .photo_box .photo {
-  position: absolute;
-  left: 0;
-  top: 0;
+  display: block;
   width: 100%;
-  height: 100%;
-  background-color: <?= $boxColor ?>;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  border-radius: 10px;
 }
 
 /* shows list */
@@ -349,16 +348,13 @@ footer .small {
 
 /* mid size styles */
 @media (min-width: 568px) {
-  /*header nav {
-    flex: 0 0 568px;
-  }*/
   .container {
     padding-top: 76px;
   }
   header .logo {
     flex: 100%;
   }
-  header .btn {
+  header .menu_btn_label {
     display: none;
   }
   header nav {
@@ -410,12 +406,7 @@ footer .small {
     flex: 50%;
     padding-bottom: 25%;
   }
-  .media_grid {
-    display: flex;
-    flex-flow: row wrap;
-  }
   .media_grid > li {
-    flex: 50%;
     padding: 0 5px;
   }
   footer nav {
