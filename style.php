@@ -284,7 +284,7 @@ header nav ul li.selected {
   height: 100%;
   background-color: <?= $boxColor ?>;
   background-size: cover;
-  background-position: center;
+  background-position: center top;
   background-repeat: no-repeat;
   border-radius: 10px;
 }

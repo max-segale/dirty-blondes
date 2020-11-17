@@ -66,7 +66,7 @@ function navListItems($isHeader) {
 
 function mediaListItems($type) {
     global $imagePath;
-    $mediaRows = sqlQuery("SELECT * FROM media WHERE type = '$type'");
+    $mediaRows = sqlQuery("SELECT * FROM media WHERE type = '$type' ORDER BY id DESC");
     while ($media = $mediaRows->fetch_object()) {
         $view = "
   <li>
