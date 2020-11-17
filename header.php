@@ -16,15 +16,17 @@ require_once('components.php');
     <title>The Dirty Blondes 🎸 NJ Rock Band</title>
     <link rel="icon" href="favicon.ico">
     <link rel="stylesheet" type="text/css" href="style.php">
-    <script type="text/javascript" src="dirty-blondes.js"></script>
   </head>
   <body>
     <header>
       <div class="logo">
         <div class="logo_img"></div>
       </div>
-      <div id="menu_btn" class="btn menu"></div>
-      <nav id="menu_nav">
+      <label for="menu_btn_check" class="menu_btn_label">
+        <div class="menu_btn_box"></div>
+      </label>
+      <input id="menu_btn_check" type="checkbox">
+      <nav>
         <ul>
           <?= navListItems(true) ?>
         </ul>

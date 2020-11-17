@@ -13,11 +13,11 @@ echo "
     <div class='section'>
       $contactInfoBox
     </div>
-    <div class='section small'>
-      $mailingListBox
-    </div>
   </div>
   <div class='band_shot' style='background-image: url($imgURL')></div>
+  <div class='section small'>
+    $mailingListBox
+  </div>
 ";
 
 include 'footer.php';

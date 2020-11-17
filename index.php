@@ -20,7 +20,7 @@ include 'header.php';
             </ul>
           </div>
           <div class="video section">
-            <span class="heading heavy">Our Original Music Video 🎬</span>
+            <span class="heading heavy">Original Music Video 🎬</span>
             <video class="front_video" width="100%" poster="<?= $imagePath ?>nj-classic-rock-band-rts-banner.jpg" controls>
               <source src="<?= $videoPath ?>the-dirty-blondes_road-to-somewhere_video.mp4" type="video/mp4">
             </video>

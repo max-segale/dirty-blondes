@@ -56,9 +56,9 @@ function navListItems($isHeader) {
             $itemClass = " class='selected'";
         }
         $view = "
-  <li$itemClass>
-    <a href='$item[1]'>$item[0]</a>
-  </li>
+          <li$itemClass>
+            <a href='$item[1]'>$item[0]</a>
+          </li>
 ";
         echo $view;
     }
@@ -80,7 +80,7 @@ function mediaListItems($type) {
         } else if ($type === 'PHOTO') {
             $view .= "
     <div class='photo_box'>
-      <div class='photo' style='background-image: url($imagePath$media->link)'></div>
+      <img class='photo' src='$imagePath$media->link' alt='$media->caption'>
     </div>
 ";
         }
@@ -168,7 +168,7 @@ function memberSection($obj) {
     <div class='bio_pic' style='background-image: url($imagePath$obj->photo)'></div>
     <h3 class='heading'>$obj->name</h3>
     <p class='light'>$obj->role</p>
-    <p>$obj->bio</p>
+    <p>" . nl2br($obj->bio, false) . "</p>
   </div>
 ";
     return $view;
